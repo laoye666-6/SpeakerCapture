@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.dsh.speakercapture'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.dsh.speakercapture"
+        minSdk 29          // Android 10:音频回放采集(AudioPlaybackCapture)的最低版本
+        targetSdk 34
+        versionCode 2
+        versionName "1.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // 纯 Java 的 LAME 3.98 移植,用于 MP3 编码(无 NDK 依赖)
+    implementation 'de.sciss:jump3r:1.0.4'
+}

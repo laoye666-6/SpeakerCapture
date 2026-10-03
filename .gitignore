@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# 打包产物(通过 GitHub Releases 分发)
+packaging/build/
+packaging/exe/
+packaging/*.apk
+packaging/*.spec
+
+# 用户录音
+recordings/
+
+# Android / Gradle
+.gradle/
+build/
+app/build/
+local.properties
+*.class
+
+# 测试产物
+android/mp3test/*.mp3
+*.log
+
+# IDE
+.idea/
+.vscode/
